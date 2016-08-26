@@ -1,0 +1,2873 @@
+/usr/local/vesta/bin/v-acknowledge-user-notification
+
+# info: update user notification
+# options: USER NOTIFICATION
+#
+# The function updates user notification.
+
+
+/usr/local/vesta/bin/v-activate-vesta-license
+
+# info: activate vesta license
+# options: MODULE LICENSE
+#
+# The function activates and registers the vesta license
+
+
+/usr/local/vesta/bin/v-add-backup-host
+
+# info: add backup host
+# options: TYPE HOST USERNAME PASSWORD [PATH] [PORT]
+#
+# This function adds a backup host
+
+
+/usr/local/vesta/bin/v-add-cron-job
+
+# info: add cron job
+# options: USER MIN HOUR DAY MONTH WDAY COMMAND [JOB] [RESTART]
+#
+# The function adds a job to cron daemon. When executing commands, any output
+# is  mailed to user's email if parameter REPORTS is set to 'yes'.
+
+
+/usr/local/vesta/bin/v-add-cron-reports
+
+# info: add cron reports
+# options: user
+#
+# The script for enabling reports on cron tasks and administrative
+# notifications.
+
+
+/usr/local/vesta/bin/v-add-cron-restart-job
+
+# info: add cron reports
+# options: NONE
+#
+# The script for enabling restart cron tasks
+
+
+/usr/local/vesta/bin/v-add-cron-vesta-autoupdate
+
+# info: add cron job for vesta autoupdates
+# options: NONE
+#
+# The function adds cronjob for vesta autoupdate.
+
+
+/usr/local/vesta/bin/v-add-database
+
+# info: add database
+# options: USER DATABASE DBUSER DBPASS [TYPE] [HOST] [CHARSET]
+#
+# The function creates the database concatenating username  and user_db.
+# Supported types of databases you can get using v-list-sys-config script.
+# If the host isn't stated and there are few hosts configured on the server,
+# then the host will be defined by one of three algorithms. "First" will choose
+# the first host in the list. "Random" will chose the host by a chance.
+# "Weight" will distribute new database through hosts evenly. Algorithm and
+# types of supported databases is designated in the main configuration file.
+
+
+/usr/local/vesta/bin/v-add-database-host
+
+# info: add new database server
+# options: TYPE HOST DBUSER DBPASS [MAX_DB] [CHARSETS] [TEMPLATE]
+#
+# The function add new database server to the server pool. It supports local
+# and remote database servers, which is useful for clusters. By adding a host
+# you can set limit for number of databases on a host. Template parameter is
+# used only for PostgreSQL and has an default value "template1". You can read
+# more about templates in official PostgreSQL documentation.
+
+
+/usr/local/vesta/bin/v-add-dns-domain
+
+# info: add dns domain
+# options: USER DOMAIN IP [NS1] [NS2] [NS3] [..] [NS8] [RESTART]
+#
+# The function adds DNS zone with records defined in the template. If the exp
+# argument isn't stated, the expiration date value will be set to next year.
+# The soa argument is responsible for the relevant record. By default the first
+# user's NS server is used. TTL is set as common for the zone and for all of
+# its records with a default value of 14400 seconds.
+
+
+/usr/local/vesta/bin/v-add-dns-on-web-alias
+
+# info: add dns domain or dns record after web domain alias
+# options: USER ALIAS IP [RESTART]
+#
+# The function adds dns domain or dns record based on web domain alias.
+
+
+/usr/local/vesta/bin/v-add-dns-record
+
+# info: add dns record
+# options: USER DOMAIN RECORD TYPE VALUE [PRIORITY] [ID] [RESTART]
+#
+# The call is used for adding new DNS record. Complex records of TXT, MX and
+# SRV types can be used by a filling in the 'value' argument. The function also
+# gets an id parameter for definition of certain record identifier or for the
+# regulation of records.
+
+
+/usr/local/vesta/bin/v-add-domain
+
+# info: add web/dns/mail domain
+# options: USER DOMAIN [IP] [RESTART]
+#
+# The function adds web/dns/mail domain to a server.
+
+
+/usr/local/vesta/bin/v-add-firewall-ban
+
+# info: add firewall blocking rule
+# options: IP CHAIN
+#
+# The function adds new blocking rule to system firewall
+
+
+/usr/local/vesta/bin/v-add-firewall-chain
+
+# info: add firewall chain
+# options: CHAIN [PORT] [PROTOCOL] [PROTOCOL]
+#
+# The function adds new rule to system firewall
+
+
+/usr/local/vesta/bin/v-add-firewall-rule
+
+# info: add firewall rule
+# options: ACTION IP PORT [PROTOCOL] [COMMENT] [RULE]
+#
+# The function adds new rule to system firewall
+
+
+/usr/local/vesta/bin/v-add-fs-archive
+
+# info: archive directory
+# options: USER ARCHIVE SOURCE
+#
+# The function creates tar archive
+
+
+/usr/local/vesta/bin/v-add-fs-directory
+
+# info: add directory
+# options: USER DIRECTORY
+#
+# The function creates new directory on the file system
+
+
+/usr/local/vesta/bin/v-add-fs-file
+
+# info: add file
+# options: USER FILE
+#
+# The function creates new files on file system
+
+
+/usr/local/vesta/bin/v-add-letsencrypt-domain
+
+# info: adding letsencrypt ssl cetificate for domain
+# options: USER DOMAIN [ALIASES] [RESTART]
+#
+# The function turns on SSL support for a domain. Parameter ssl_dir is a path
+# to directory where 2 or 3 ssl files can be found. Certificate file 
+# domain.tld.crt and its key domain.tld.key  are mandatory. Certificate
+# authority domain.tld.ca file is optional. If home directory  parameter
+# (ssl_home) is not set, https domain uses public_shtml as separate
+# documentroot directory.
+
+
+/usr/local/vesta/bin/v-add-letsencrypt-user
+
+# info: register letsencrypt user account
+# options: USER [EMAIL]
+#
+# The function creates and register LetsEncript account key
+
+
+/usr/local/vesta/bin/v-add-mail-account
+
+# info: add mail domain account
+# options: USER DOMAIN ACCOUNT PASSWORD [QUOTA]
+#
+# The function add new email account.
+
+
+/usr/local/vesta/bin/v-add-mail-account-alias
+
+# info: add mail account alias aka nickname
+# options: USER DOMAIN ACCOUNT ALIAS
+#
+# The function add new email alias.
+
+
+/usr/local/vesta/bin/v-add-mail-account-autoreply
+
+# info: add mail account autoreply message
+# options: USER DOMAIN ACCOUNT MESSAGE
+#
+# The function add new email account.
+
+
+/usr/local/vesta/bin/v-add-mail-account-forward
+
+# info: add mail account forward address
+# options: USER DOMAIN ACCOUNT FORWARD
+#
+# The function add new email account.
+
+
+/usr/local/vesta/bin/v-add-mail-account-fwd-only
+
+# info: add mail account forward-only flag
+# options: USER DOMAIN ACCOUNT
+#
+# The function adds fwd-only flag
+
+
+/usr/local/vesta/bin/v-add-mail-domain
+
+# info: add mail domain
+# options: USER DOMAIN [ANTISPAM] [ANTIVIRUS] [DKIM] [DKIM_SIZE]
+#
+# The function adds MAIL domain.
+
+
+/usr/local/vesta/bin/v-add-mail-domain-antispam
+
+# info: add mail domain antispam support
+# options: USER DOMAIN
+#
+# The function enables spamassasin for incoming emails.
+
+
+/usr/local/vesta/bin/v-add-mail-domain-antivirus
+
+# info: add mail domain antivirus support
+# options: USER DOMAIN
+#
+# The function enables clamav scan for incoming emails.
+
+
+/usr/local/vesta/bin/v-add-mail-domain-catchall
+
+# info: add mail domain catchall account
+# options: USER DOMAIN EMAIL
+#
+# The function enables catchall account for incoming emails.
+
+
+/usr/local/vesta/bin/v-add-mail-domain-dkim
+
+# info: add mail domain dkim support
+# options: USER DOMAIN [DKIM_SIZE]
+#
+# The function adds DKIM signature to outgoing domain emails.
+
+
+/usr/local/vesta/bin/v-add-remote-dns-domain
+
+# info: add remote dns domain
+# options: USER DOMAIN [FLUSH]
+#
+# The function synchronize dns domain with the remote server.
+
+
+/usr/local/vesta/bin/v-add-remote-dns-host
+
+# info: add new remote dns host
+# options: HOST PORT USER PASSWORD [TYPE] [DNS_USER]
+#
+# The function adds remote dns server to the dns cluster.
+
+
+/usr/local/vesta/bin/v-add-remote-dns-record
+
+# info: add remote dns domain record
+# options: USER DOMAIN ID
+#
+# The function synchronize dns domain with the remote server.
+
+
+/usr/local/vesta/bin/v-add-sys-firewall
+
+# info: add system firewall
+# options: NONE
+#
+# The script enables firewall
+
+
+/usr/local/vesta/bin/v-add-sys-ip
+
+# info: add system ip address
+# options: IP NETMASK [INTERFACE] [USER] [IP_STATUS] [IP_NAME] [NAT_IP]
+#
+# The function adds ip address into a system. It also creates rc scripts. You
+# can specify ip name which will be used as root domain for temporary aliases.
+# For example, if you set a1.myhosting.com as name, each new domain created on
+# this  ip will automatically receive alias $domain.a1.myhosting.com. Of course
+# you must have wildcard record *.a1.myhosting.com pointed to ip. This feature 
+# is very handy when customer wants to test domain before dns migration.
+
+
+/usr/local/vesta/bin/v-add-sys-quota
+
+# info: add system quota
+# options: NONE
+#
+# The script enables filesystem quota on /home partition
+
+
+/usr/local/vesta/bin/v-add-sys-sftp-jail
+
+# info: add system sftp jail
+# options: NONE
+#
+# The script enables sftp jailed environment
+
+
+/usr/local/vesta/bin/v-add-user
+
+# info: add system user
+# options: USER PASSWORD EMAIL [PACKAGE] [FNAME] [LNAME]
+#
+# The function creates new user account.
+
+
+/usr/local/vesta/bin/v-add-user-favourites
+
+# info: adding user favourites
+# options: USER SYSTEM OBJECT
+#
+# The function adds object to users favourites
+
+
+/usr/local/vesta/bin/v-add-user-notification
+
+# info: add user notification
+# options: USER TOPIC NOTICE [TYPE]
+#
+# The function adds user notification.
+
+
+/usr/local/vesta/bin/v-add-user-package
+
+# info: adding user package
+# options: PKG_DIR PACKAGE [REWRITE]
+#
+# The function adds new user package to the system.
+
+
+/usr/local/vesta/bin/v-add-user-sftp-jail
+
+# info: add user sftp jail
+# options: USER
+#
+# The script enables sftp jailed environment
+
+
+/usr/local/vesta/bin/v-add-web-domain
+
+# info: add web domain
+# options: USER DOMAIN [IP] [ALIASES] [PROXY_EXTENTIONS] [RESTART]
+#
+# The function adds virtual host to a server. In cases when ip is
+# undefined in the script, "default" template will be used. The alias of
+# www.domain.tld type will be automatically assigned to the domain unless
+# "none" is transmited as argument. If ip have associated dns name, this
+# domain will also get the alias domain-tpl.$ipname. An alias with the ip
+# name is useful during the site testing while dns isn't moved to server yet.
+
+
+/usr/local/vesta/bin/v-add-web-domain-alias
+
+# info: add web domain alias
+# options: USER DOMAIN ALIASES [RESTART]
+#
+# The call is intended for adding aliases to a domain (it is also called
+# "domain parking"). The function supports wildcards *.domain.tpl.
+
+
+/usr/local/vesta/bin/v-add-web-domain-backend
+
+# info: add web domain backend
+# options: USER DOMAIN [TEMPLATE] [RESTART]
+#
+# The call is used for adding web backend configuration.
+
+
+/usr/local/vesta/bin/v-add-web-domain-ftp
+
+# info: add ftp account for web domain.
+# options: USER DOMAIN FTP_USER FTP_PASSWORD [FTP_PATH]
+#
+# The function creates additional ftp account for web domain.
+
+
+/usr/local/vesta/bin/v-add-web-domain-httpauth
+
+# info: add password protection for web domain
+# options: USER DOMAIN AUTH_USER AUTH_PASSWORD [RESTART]
+#
+# The call is used for securing web domain with http auth
+
+
+/usr/local/vesta/bin/v-add-web-domain-proxy
+
+# info: add webdomain proxy support
+# options: USER DOMAIN [TEMPLATE] [EXTENTIONS] [RESTART]
+#
+# The function enables proxy support for a domain. This can significantly
+# improve website speed.
+
+
+/usr/local/vesta/bin/v-add-web-domain-ssl
+
+# info: adding ssl for domain
+# options: USER DOMAIN SSL_DIR [SSL_HOME] [RESTART]
+#
+# The function turns on SSL support for a domain. Parameter ssl_dir is a path
+# to directory where 2 or 3 ssl files can be found. Certificate file 
+# domain.tld.crt and its key domain.tld.key  are mandatory. Certificate
+# authority domain.tld.ca file is optional. If home directory  parameter
+# (ssl_home) is not set, https domain uses public_shtml as separate
+# documentroot directory.
+
+
+/usr/local/vesta/bin/v-add-web-domain-stats
+
+# info: add log analyzer to generate domain statitics
+# options: USER DOMAIN TYPE
+#
+# The call is used for enabling log analyzer system to a domain.  At this time
+# two types of these system is supported - awstats and webalizer. For viewing
+# the domain statistics use http://domain.tld/vstats/ link. Access this page
+# is not protected by default. If you want to secure it with passwords you
+# should use v-add-web-domain_stat_auth script.
+
+
+/usr/local/vesta/bin/v-add-web-domain-stats-user
+
+# info: add password protection to web domain statistics
+# options: USER DOMAIN STATS_USER STATS_PASSWORD
+#
+# The call is used for securing the web statistics page.
+
+
+/usr/local/vesta/bin/v-backup-user
+
+# info: backup system user with all its objects
+# options: USER NOTIFY
+#
+# The call is used for backing up user with all its domains and databases.
+
+
+/usr/local/vesta/bin/v-backup-users
+
+# info: backup all users
+# options: NONE
+#
+# The function backups all system users.
+
+
+/usr/local/vesta/bin/v-change-cron-job
+
+# info: change cron job
+# options: USER JOB MIN HOUR DAY MONTH WDAY COMMAND
+#
+# The function is used for changing existing job. It fully replace job
+# parameters with new one but with same id.
+
+
+/usr/local/vesta/bin/v-change-database-host-password
+
+# info: change database server password
+# options: TYPE HOST USER PASSWORD
+#
+# The function changes database server password.
+
+
+/usr/local/vesta/bin/v-change-database-owner
+
+# info: change database owner
+# options: DATABASE USER
+#
+# The function for changing database owner.
+
+
+/usr/local/vesta/bin/v-change-database-password
+
+# info: change database password
+# options: USER DATABASE DBPASS
+#
+# The function for changing database user  password to a database. It uses the
+# full name of database as argument.
+
+
+/usr/local/vesta/bin/v-change-database-user
+
+# info: change database username
+# options: USER DATABASE DBUSER [DBPASS]
+#
+# The function for changing database user. It uses the
+
+
+/usr/local/vesta/bin/v-change-dns-domain-exp
+
+# info: change dns domain expiration date
+# options: USER DOMAIN EXP
+#
+# The function of changing the term of expiration domain's registration. The
+# serial number will be refreshed automatically during update.
+
+
+/usr/local/vesta/bin/v-change-dns-domain-ip
+
+# info: change dns domain ip address
+# options: USER DOMAIN IP
+#
+# The function for changing the main ip of DNS zone.
+
+
+/usr/local/vesta/bin/v-change-dns-domain-soa
+
+# info: change dns domain soa record
+# options: USER DOMAIN SOA
+#
+# The function for changing SOA record. This type of records can not be
+# modified by v-change-dns-record call.
+
+
+/usr/local/vesta/bin/v-change-dns-domain-tpl
+
+# info: change dns domain template
+# options: USER DOMAIN TEMPLATE [RESTART]
+#
+# The function for changing the template of records. By updating old records
+# will be removed and new records will be generated in accordance with
+# parameters of new template.
+
+
+/usr/local/vesta/bin/v-change-dns-domain-ttl
+
+# info: change dns domain ttl
+# options: USER DOMAIN TTL
+#
+# The function for changing the time to live TTL parameter for all records.
+
+
+/usr/local/vesta/bin/v-change-dns-record
+
+# info: change dns domain record
+# options: USER DOMAIN ID VALUE [PRIORITY] [RESTART]
+#
+# The function for changing DNS record.
+
+
+/usr/local/vesta/bin/v-change-dns-record-id
+
+# info: change dns domain record id
+# options: USER DOMAIN ID NEWID [RESTART]
+#
+# The function for changing internal record id.
+
+
+/usr/local/vesta/bin/v-change-domain-owner
+
+# info: change domain owner
+# options: DOMAIN USER
+#
+# The function of changing domain ownership.
+
+
+/usr/local/vesta/bin/v-change-firewall-rule
+
+# info: change firewall rule
+# options: RULE ACTION IP PORT [PROTOCOL] [COMMENT]
+#
+# The function is used for changing existing firewall rule.
+# It fully replace rule with new one but keeps same id.
+
+
+/usr/local/vesta/bin/v-change-fs-file-permission
+
+# info: change file permission
+# options: USER FILE PERMISSIONS
+#
+# The function changes file access permissions on the file system
+
+
+/usr/local/vesta/bin/v-change-mail-account-password
+
+# info: change mail account password
+# options: USER DOMAIN ACCOUNT PASSWORD
+#
+# The function changes email account password.
+
+
+/usr/local/vesta/bin/v-change-mail-account-quota
+
+# info: change mail account quota
+# options: USER DOMAIN ACCOUNT QUOTA
+#
+# The function changes email account disk quota.
+
+
+/usr/local/vesta/bin/v-change-mail-domain-catchall
+
+# info: change mail domain catchall email
+# options: USER DOMAIN EMAIL
+#
+# The function changes mail domain catchall.
+
+
+/usr/local/vesta/bin/v-change-remote-dns-domain-exp
+
+# info: change remote dns domain expiration date
+# options: USER DOMAIN
+#
+# The function synchronize dns domain with the remote server.
+
+
+/usr/local/vesta/bin/v-change-remote-dns-domain-soa
+
+# info: change remote dns domain SOA
+# options: USER DOMAIN
+#
+# The function synchronize dns domain with the remote server.
+
+
+/usr/local/vesta/bin/v-change-remote-dns-domain-ttl
+
+# info: change remote dns domain TTL
+# options: USER DOMAIN
+#
+# The function synchronize dns domain with the remote server.
+
+
+/usr/local/vesta/bin/v-change-sys-config-value
+
+# info: change sysconfig value
+# options: KEY VALUE
+#
+# The function is for changing main config settings such as COMPANY_NAME or
+# COMPANY_EMAIL and so on.
+
+
+/usr/local/vesta/bin/v-change-sys-hostname
+
+# info: change hostname
+# options: HOSTNAME
+#
+# The function for changing system hostname.
+
+
+/usr/local/vesta/bin/v-change-sys-ip-name
+
+# info: change ip name
+# options: IP NAME
+#
+# The function for changing dns domain associated with ip.
+
+
+/usr/local/vesta/bin/v-change-sys-ip-nat
+
+# info: change ip nat address
+# options: IP NAT_IP [RESTART]
+#
+# The function for changing nat ip associated with ip.
+
+
+/usr/local/vesta/bin/v-change-sys-ip-owner
+
+# info: change ip owner
+# options: IP USER
+#
+# The function of changing ip address ownership.
+
+
+/usr/local/vesta/bin/v-change-sys-ip-status
+
+# info: change ip status
+# options: IP IP_STATUS
+#
+# The function of changing an ip address's status.
+
+
+/usr/local/vesta/bin/v-change-sys-language
+
+# info: change sys language
+# options: LANGUAGE
+#
+# The function for changing system language.
+
+
+/usr/local/vesta/bin/v-change-sys-timezone
+
+# info: change system timezone
+# options: TIMEZONE
+#
+# The function for changing system timezone.
+
+
+/usr/local/vesta/bin/v-change-user-contact
+
+# info: change user contact email
+# options: USER EMAIL
+#
+# The function for changing of e-mail associated with a certain user.
+
+
+/usr/local/vesta/bin/v-change-user-language
+
+# info: change user language
+# options: USER LANGUAGE
+#
+# The function for changing language.
+
+
+/usr/local/vesta/bin/v-change-user-name
+
+# info: change user full name
+# options: USER FNAME LNAME
+#
+# The function allow to change user's full name.
+
+
+/usr/local/vesta/bin/v-change-user-ns
+
+# info: change user nameservers
+# options: USER NS1 NS2 [NS3] [NS4] [NS5] [NS6] [NS7] [NS8]
+#
+# The function for changing default nameservers for specific user.
+
+
+/usr/local/vesta/bin/v-change-user-package
+
+# info: change user package
+# options: USER PACKAGE [FORCE]
+#
+# The function changes user's hosting package.
+
+
+/usr/local/vesta/bin/v-change-user-password
+
+# info: change user password
+# options: USER PASSWORD
+#
+# The function changes user's password and updates RKEY value.
+
+
+/usr/local/vesta/bin/v-change-user-shell
+
+# info: change user shell
+# options: USER SHELL
+#
+# The function changes system shell of a user. Shell gives ability to use ssh.
+
+
+/usr/local/vesta/bin/v-change-user-template
+
+# info: change user default template
+# options: USER TYPE TEMPLATE
+#
+# The function changes default user web template.
+
+
+/usr/local/vesta/bin/v-change-web-domain-backend-tpl
+
+# info: change web domain backend template
+# options: USER DOMAIN TEMPLATE [RESTART]
+#
+# The function changes backend template
+
+
+/usr/local/vesta/bin/v-change-web-domain-ftp-password
+
+# info: change ftp user password.
+# options: USER DOMAIN FTP_USER FTP_PASSWORD
+#
+# The function changes ftp user password.
+
+
+/usr/local/vesta/bin/v-change-web-domain-ftp-path
+
+# info: change path for ftp user.
+# options: USER DOMAIN FTP_USER FTP_PATH
+#
+# The function changes ftp user path.
+
+
+/usr/local/vesta/bin/v-change-web-domain-httpauth
+
+# info: change password for http auth user
+# options: USER DOMAIN AUTH_USER AUTH_PASSWORD
+#
+# The call is used for changing http auth user password
+
+
+/usr/local/vesta/bin/v-change-web-domain-ip
+
+# info: change web domain ip
+# options: USER DOMAIN DOMAIN [RESTART]
+#
+# The call is used for changing domain ip
+
+
+/usr/local/vesta/bin/v-change-web-domain-proxy-tpl
+
+# info: change web domain proxy template
+# options: USER DOMAIN TEMPLATE [EXTENTIONS] [RESTART]
+#
+# The function changes proxy template
+
+
+/usr/local/vesta/bin/v-change-web-domain-sslcert
+
+# info: change domain ssl certificate
+# options: USER DOMAIN SSL_DIR [RESTART]
+#
+# The function changes SSL domain certificate and the key. If ca file present
+# it will be replaced as well.
+
+
+/usr/local/vesta/bin/v-change-web-domain-sslhome
+
+
+/usr/local/vesta/bin/v-change-web-domain-stats
+
+# info: change web domain statistics
+# options: USER DOMAIN TYPE
+#
+# The function of deleting site's system of statistics. Its type is
+# automatically chooses from client's configuration file.
+
+
+/usr/local/vesta/bin/v-change-web-domain-tpl
+
+# info: change web domain template
+# options: USER DOMAIN TEMPLATE [RESTART]
+#
+# The function changes template of the web configuration file. The content
+# of webdomain directories remains untouched.
+
+
+/usr/local/vesta/bin/v-check-fs-permission
+
+# info: open file
+# options: USER FILE
+#
+# The function opens/reads files on the file system
+
+
+/usr/local/vesta/bin/v-check-letsencrypt-domain
+
+# info: check letsencrypt domain
+# options: USER DOMAIN
+#
+# The function check and validates domain with LetsEncript
+
+
+/usr/local/vesta/bin/v-check-user-password
+
+# info: check user password
+# options: USER PASSWORD [IP]
+#
+# The function verifies user password from file
+
+
+/usr/local/vesta/bin/v-check-vesta-license
+
+# info: check vesta license
+# options: [MODULE]
+#
+# The function activates and register vesta license
+
+
+/usr/local/vesta/bin/v-copy-fs-directory
+
+# info: copy directory
+# options: USER SRC_DIRECTORY DST_DIRECTORY
+#
+# The function copies directory on the file system
+
+
+/usr/local/vesta/bin/v-copy-fs-file
+
+# info: copy file
+# options: USER SRC_FILE DST_FLE
+#
+# The function copies file on the file system
+
+
+/usr/local/vesta/bin/v-deactivate-vesta-license
+
+# info: deactivate vesta license
+# options: MODULE LICENSE
+#
+# The function activates and register vesta license
+
+
+/usr/local/vesta/bin/v-delete-backup-host
+
+# info: delete backup ftp server
+# options: TYPE
+#
+# The function deletes ftp backup host
+
+
+/usr/local/vesta/bin/v-delete-cron-job
+
+# info: delete cron job
+# options: USER JOB
+#
+# The function deletes cron job.
+
+
+/usr/local/vesta/bin/v-delete-cron-reports
+
+# info: delete cron reports
+# options: USER
+#
+# The script for disabling reports on cron tasks and administrative
+# notifications.
+
+
+/usr/local/vesta/bin/v-delete-cron-restart-job
+
+# info: delete restart job
+# options: NONE
+#
+# The script for disabling restart cron tasks
+
+
+/usr/local/vesta/bin/v-delete-cron-vesta-autoupdate
+
+# info: delete vesta autoupdate cron job
+# options: NONE
+#
+# The function deletes vesta autoupdate cron job.
+
+
+/usr/local/vesta/bin/v-delete-database
+
+# info: delete database
+# options: USER DATABASE
+#
+# The function for deleting the database. If database user have access to
+# another database, he will not be deleted.
+
+
+/usr/local/vesta/bin/v-delete-database-host
+
+# info: delete database server
+# options: TYPE HOST
+#
+# The function for deleting the database host from vesta configuration. It will
+# be deleted if there are no databases created on it only.
+
+
+/usr/local/vesta/bin/v-delete-databases
+
+# info: delete user databases
+# options: USER
+#
+# The function deletes all user databases.
+
+
+/usr/local/vesta/bin/v-delete-dns-domain
+
+# info: delete dns domain
+# options: USER DOMAIN
+#
+# The function for deleting DNS domain. By deleting it all records will also be
+# deleted.
+
+
+/usr/local/vesta/bin/v-delete-dns-domains
+
+# info: delete dns domains
+# options: USER
+#
+# The function for deleting all users DNS domains.
+
+
+/usr/local/vesta/bin/v-delete-dns-domains-src
+
+# info: delete dns domains based on SRC field
+# options: USER SRC [RESTART]
+#
+# The function for deleting DNS domains related to a certain host.
+
+
+/usr/local/vesta/bin/v-delete-dns-on-web-alias
+
+# info: delete dns domain or dns record based on web domain alias
+# options: USER DOMAIN
+#
+# The function deletes dns domain or dns record based on web domain alias.
+
+
+/usr/local/vesta/bin/v-delete-dns-record
+
+# info: delete dns record
+# options: USER DOMAIN ID [RESTART]
+#
+# The function for deleting a certain record of DNS zone.
+
+
+/usr/local/vesta/bin/v-delete-domain
+
+# info: delete web/dns/mail domain
+# options: USER DOMAIN
+#
+# The function deletes web/dns/mail domain.
+
+
+/usr/local/vesta/bin/v-delete-firewall-ban
+
+# info: delete firewall blocking rule
+# options: IP CHAIN
+#
+# The function deletes blocking rule from system firewall
+
+
+/usr/local/vesta/bin/v-delete-firewall-chain
+
+# info: delete firewall chain
+# options: CHAIN
+#
+# The function adds new rule to system firewall
+
+
+/usr/local/vesta/bin/v-delete-firewall-rule
+
+# info: delete firewall rule
+# options: RULE
+#
+# The function deletes firewall rule.
+
+
+/usr/local/vesta/bin/v-delete-fs-directory
+
+# info: delete directory
+# options: USER DIRECTORY
+#
+# The function deletes directory on the file system
+
+
+/usr/local/vesta/bin/v-delete-fs-file
+
+# info: delete file
+# options: USER FILE
+#
+# The function deletes file on the file system
+
+
+/usr/local/vesta/bin/v-delete-mail-account
+
+# info: delete mail account
+# options: USER DOMAIN ACCOUNT
+#
+# The function deletes email account.
+
+
+/usr/local/vesta/bin/v-delete-mail-account-alias
+
+# info: delete mail account alias aka nickname
+# options: USER DOMAIN ACCOUNT ALIAS
+#
+# The function deletes email account alias.
+
+
+/usr/local/vesta/bin/v-delete-mail-account-autoreply
+
+# info: delete mail account autoreply message
+# options: USER DOMAIN ACCOUNT ALIAS
+#
+# The function delete email account autoreply.
+
+
+/usr/local/vesta/bin/v-delete-mail-account-forward
+
+# info: delete mail account forward
+# options: USER DOMAIN ACCOUNT EMAIL
+#
+# The function add delete email account forward address.
+
+
+/usr/local/vesta/bin/v-delete-mail-account-fwd-only
+
+# info: delete mail account forward-only flag
+# options: USER DOMAIN ACCOUNT
+#
+# The function deletes fwd-only flag
+
+
+/usr/local/vesta/bin/v-delete-mail-domain
+
+# info: delete mail domain
+# options: USER DOMAIN
+#
+# The function for deleting MAIL domain. By deleting it all accounts will
+# also be deleted.
+
+
+/usr/local/vesta/bin/v-delete-mail-domain-antispam
+
+# info: delete mail domain antispam support
+# options: USER DOMAIN
+#
+# The function disable spamassasin for incoming emails.
+
+
+/usr/local/vesta/bin/v-delete-mail-domain-antivirus
+
+# info: delete mail domain antivirus support
+# options: USER DOMAIN
+#
+# The function disables clamav scan for incoming emails.
+
+
+/usr/local/vesta/bin/v-delete-mail-domain-catchall
+
+# info: delete mail domain catchall email
+# options: USER DOMAIN
+#
+# The function disables mail domain cathcall.
+
+
+/usr/local/vesta/bin/v-delete-mail-domain-dkim
+
+# info: delete mail domain dkim support
+# options: USER DOMAIN [DKIM_SIZE]
+#
+# The function delete DKIM domain pem.
+
+
+/usr/local/vesta/bin/v-delete-mail-domains
+
+# info: delete mail domains
+# options: USER
+#
+# The function for deleting all users mail domains.
+
+
+/usr/local/vesta/bin/v-delete-remote-dns-domain
+
+# info: delete remote dns domain
+# options: USER DOMAIN
+#
+# The function synchronize dns with the remote server.
+
+
+/usr/local/vesta/bin/v-delete-remote-dns-domains
+
+# info: delete remote dns domains
+# options: [HOST]
+# The function deletes remote dns domains.
+
+
+/usr/local/vesta/bin/v-delete-remote-dns-host
+
+# info: delete remote dns host
+# options: HOST
+#
+# The function for deleting the remote dns host from vesta configuration.
+
+
+/usr/local/vesta/bin/v-delete-remote-dns-record
+
+# info: delete remote dns domain record
+# options: USER DOMAIN ID
+#
+# The function synchronize dns with the remote server.
+
+
+/usr/local/vesta/bin/v-delete-sys-firewall
+
+# info: delete system firewall
+# options: NONE
+#
+# The script disables firewall support
+
+
+/usr/local/vesta/bin/v-delete-sys-ip
+
+# info: delete system ip
+# options: IP
+#
+# The function for deleting a system ip. It does not allow to delete first ip
+# on interface and do not allow to delete ip which is used by a web domain.
+
+
+/usr/local/vesta/bin/v-delete-sys-quota
+
+# info: delete system quota
+# options: NONE
+#
+# The script disables filesystem quota on /home partition
+
+
+/usr/local/vesta/bin/v-delete-sys-sftp-jail
+
+# info: delete system sftp jail
+# options: NONE
+#
+# The script enables sftp jailed environment
+
+
+/usr/local/vesta/bin/v-delete-user
+
+# info: delete user
+# options: USER
+#
+# This function deletes a certain user and all his resources such as domains,
+# databases, cron jobs, etc.
+
+
+/usr/local/vesta/bin/v-delete-user-backup
+
+# info: delete user backup
+# options: USER NACKUP
+#
+# The function deletes user backup.
+
+
+/usr/local/vesta/bin/v-delete-user-backup-exclusions
+
+# info: delete backup exclusion
+# options: USER [SYSTEM]
+#
+# The function for deleting backup exclusion
+
+
+/usr/local/vesta/bin/v-delete-user-favourites
+
+# info: deleting user favourites
+# options: USER SYSTEM OBJECT
+#
+# The function deletes object from users favourites
+
+
+/usr/local/vesta/bin/v-delete-user-ips
+
+# info: delete user ips
+# options: USER
+#
+# The function deletes all user's ip addresses.
+
+
+/usr/local/vesta/bin/v-delete-user-notification
+
+# info: delete user notification
+# options: USER NOTIFICATION
+#
+# The function deletes user notification.
+
+
+/usr/local/vesta/bin/v-delete-user-package
+
+# info: delete user package
+# options: PACKAGE
+#
+# The function for deleting user package. It does not allow to delete package
+# if it is in use.
+
+
+/usr/local/vesta/bin/v-delete-user-sftp-jail
+
+# info: delete user sftp jail
+# options: USER
+#
+# The script enables sftp jailed environment
+
+
+/usr/local/vesta/bin/v-delete-web-domain
+
+# info: delete web domain
+# options: USER DOMAIN
+#
+# The call of function leads to the removal of domain and all its components
+# (statistics, folders contents, ssl certificates, etc.). This operation is
+# not fully supported by "undo" function, so the data recovery is possible
+# only with a help of reserve copy.
+
+
+/usr/local/vesta/bin/v-delete-web-domain-alias
+
+# info: delete web domain alias
+# options: USER DOMAIN ALIAS [RESTART]
+#
+# The function of deleting the alias domain (parked domain). By this call
+# default www aliase can be removed as well.
+
+
+/usr/local/vesta/bin/v-delete-web-domain-backend
+
+# info: deleting web domain backend configuration
+# options: USER DOMAIN [RESTART]
+#
+# The function of deleting the virtualhost backend configuration.
+
+
+/usr/local/vesta/bin/v-delete-web-domain-ftp
+
+# info: delete webdomain ftp account
+# options: USER DOMAIN FTP_USER
+#
+# The function deletes additional ftp account.
+
+
+/usr/local/vesta/bin/v-delete-web-domain-httpauth
+
+# info: delete http auth user
+# options: USER DOMAIN AUTH_USER [RESTART]
+#
+# The call is used for deleting http auth user
+
+
+/usr/local/vesta/bin/v-delete-web-domain-proxy
+
+# info: deleting web domain proxy configuration
+# options: USER DOMAIN
+#
+# The function of deleting the virtualhost proxy configuration.
+
+
+/usr/local/vesta/bin/v-delete-web-domains
+
+# info: delete web domains
+# options: USER [RESTART]
+#
+# The function deletes all user's webdomains.
+
+
+/usr/local/vesta/bin/v-delete-web-domain-ssl
+
+# info: delete web domain SSL support
+# options: USER DOMAIN
+#
+# The function disable https support and deletes SSL certificates.
+
+
+/usr/local/vesta/bin/v-delete-web-domain-stats
+
+# info: delete web domain statistics
+# options: USER DOMAIN
+#
+# The function of deleting site's system of statistics. Its type is
+# automatically chooses from client's configuration file.
+
+
+/usr/local/vesta/bin/v-delete-web-domain-stats-user
+
+# info: disable webdomain stats  authentication support
+# options: USER DOMAIN
+#
+# The function removes authentication of statistics system. If the script is
+# called without naming a certain user, all users will be removed. After
+# deleting all of them statistics will be accessible for view without an
+# authentication.
+
+
+/usr/local/vesta/bin/v-extract-fs-archive
+
+# info: archive to directory
+# options: USER ARCHIVE DIRECTORY
+#
+# The function extracts archive into directory on the file system
+
+
+/usr/local/vesta/bin/v-generate-api-key
+
+# info: generate api key
+# options: none
+#
+# The function creates a key file in /usr/local/vesta/data/keys/
+
+
+/usr/local/vesta/bin/v-generate-password-hash
+
+#!/usr/local/vesta/php/bin/php
+<?php
+//# info: generate password  hash
+//# options: HASH-METHOD SALT PASSWORD
+//
+//# The function generates password hash
+
+
+/usr/local/vesta/bin/v-generate-ssl-cert
+
+# info: generate self signed certificate and CSR request
+# options: DOMAIN EMAIL COUNTRY STATE CITY ORG UNIT [ALIASES] [FORMAT]
+#
+# The function generates self signed SSL certificate and CSR request
+
+
+/usr/local/vesta/bin/v-get-dns-domain-value
+
+# info: get dns domain value
+# options: USER DOMAIN KEY
+#
+# The function for getting a certain DNS domain parameter.
+
+
+/usr/local/vesta/bin/v-get-fs-file-type
+
+# info: get file type
+# options: USER FILE
+#
+# The function shows file type
+
+
+/usr/local/vesta/bin/v-get-mail-account-value
+
+# info: get mail account value
+# options: USER DOMAIN ACCOUNT KEY
+#
+# The function for getting a certain mail account parameter.
+
+
+/usr/local/vesta/bin/v-get-mail-domain-value
+
+# info: get mail domain value
+# options: USER DOMAIN KEY
+#
+# The function for getting a certain mail domain parameter.
+
+
+/usr/local/vesta/bin/v-get-sys-timezone
+
+# info: get system timezone
+# options: [FORMAT]
+#
+# The function to get system timezone
+
+
+/usr/local/vesta/bin/v-get-sys-timezones
+
+# info: list system timezone
+# options: [FORMAT]
+#
+# The function checks system timezone settings
+
+
+/usr/local/vesta/bin/v-get-user-value
+
+# info: get user value
+# options: USER KEY
+#
+# The function for obtaining certain user's parameters.
+
+
+/usr/local/vesta/bin/v-get-web-domain-value
+
+# info: get web domain value
+# options: USER DOMAIN KEY
+#
+# The function is intended for obtaining a domain value by the key. This call
+# is useful for arranging composite queries. The answer is displayed only in
+# raw form; output formats aren't supported.
+
+
+/usr/local/vesta/bin/v-insert-dns-domain
+
+# info: insert dns domain
+# options: USER DATA [SRC] [FLUSH] [RESTART]
+#
+# The function inserts raw record to the dns.conf
+
+
+/usr/local/vesta/bin/v-insert-dns-record
+
+# info: insert dns record
+# options: USER DOMAIN DATA [RESTART]
+#
+# The function inserts raw dns record to the domain conf
+
+
+/usr/local/vesta/bin/v-insert-dns-records
+
+# info: inserts dns records
+# options: USER DOMAIN DATA_FILE [RESTART]
+#
+# The function copy dns record to the domain conf
+
+
+/usr/local/vesta/bin/v-list-backup-host
+
+# info: list backup host
+# options: TYPE HOST [FORMAT]
+#
+# The function for obtaining the list of backup host parameters.
+
+
+/usr/local/vesta/bin/v-list-cron-job
+
+# info: list cron job
+# options: USER JOB [FORMAT]
+#
+# The function of obtaining cron job parameters.
+
+
+/usr/local/vesta/bin/v-list-cron-jobs
+
+# info: list user cron jobs
+# options: USER [FORMAT]
+#
+# The function for obtaining the list of all users cron jobs.
+
+
+/usr/local/vesta/bin/v-list-database
+
+# info: list database
+# options: USER DATABASE [FORMAT]
+#
+# The function for obtaining of all database's parameters.
+
+
+/usr/local/vesta/bin/v-list-database-host
+
+# info: list database host
+# options: TYPE HOST [FORMAT]
+#
+# The function for obtaining database host parameters.
+
+
+/usr/local/vesta/bin/v-list-database-hosts
+
+# info: list database hosts
+# options: [FORMAT]
+#
+# The function for obtaining the list of all configured database hosts.
+
+
+/usr/local/vesta/bin/v-list-databases
+
+# info: listing databases
+# options: USER [FORMAT]
+#
+# The function for obtaining the list of all user's databases.
+
+
+/usr/local/vesta/bin/v-list-database-types
+
+# info: list supported database types
+# options: [FORMAT]
+#
+# The function for obtaining the list of database types.
+
+
+/usr/local/vesta/bin/v-list-dns-domain
+
+# info: list dns domain
+# options: USER DOMAIN [FORMAT]
+#
+# The function of obtaining the list of dns domain parameters.
+
+
+/usr/local/vesta/bin/v-list-dns-domains
+
+# info: list dns domains
+# options: USER [FORMAT]
+#
+# The function for obtaining all DNS domains of a user.
+
+
+/usr/local/vesta/bin/v-list-dns-records
+
+# info: list dns domain records
+# options: USER DOMAIN [FORMAT]
+#
+# The function for getting all DNS domain records.
+
+
+/usr/local/vesta/bin/v-list-dns-template
+
+# info: list dns template
+# options: TEMPLATE [FORMAT]
+#
+# The function for obtaining the DNS template parameters.
+
+
+/usr/local/vesta/bin/v-list-dns-templates
+
+# info: list dns templates
+# options: [FORMAT]
+#
+# The function for obtaining the list of all DNS templates available.
+
+
+/usr/local/vesta/bin/v-list-firewall
+
+# info: list iptables rules
+# options: [FORMAT]
+#
+# The function of obtaining the list of all iptables rules.
+
+
+/usr/local/vesta/bin/v-list-firewall-ban
+
+# info: list firewall block list
+# options: [FORMAT]
+#
+# The function of obtaining the list of currently blocked ips.
+
+
+/usr/local/vesta/bin/v-list-firewall-rule
+
+# info: list firewall rule
+# options: RULE [FORMAT]
+#
+# The function of obtaining firewall rule parameters.
+
+
+/usr/local/vesta/bin/v-list-fs-directory
+
+# info: list directory
+# options: USER DIRECTORY
+#
+# The function lists directory on the file system
+
+
+/usr/local/vesta/bin/v-list-letsencrypt-user
+
+# info: list letsencrypt key
+# options: USER [FORMAT]
+#
+# The function for obtaining the letsencrypt key thumbprint
+
+
+/usr/local/vesta/bin/v-list-mail-account
+
+# info: list mail domain account
+# options: USER DOMAIN ACCOUNT [FORMAT]
+#
+# The function of obtaining the list of account parameters.
+
+
+/usr/local/vesta/bin/v-list-mail-account-autoreply
+
+# info: list mail account autoreply
+# options: USER DOMAIN ACCOUNT [FORMAT]
+#
+# The function of obtaining mail account autoreply message.
+
+
+/usr/local/vesta/bin/v-list-mail-accounts
+
+# info: list mail domain accounts
+# options: USER DOMAIN [FORMAT]
+#
+# The function of obtaining the list of all user domains.
+
+
+/usr/local/vesta/bin/v-list-mail-domain
+
+# info: list mail domain
+# options: USER DOMAIN [FORMAT]
+#
+# The function of obtaining the list of domain parameters.
+
+
+/usr/local/vesta/bin/v-list-mail-domain-dkim
+
+# info: list mail domain dkim
+# options: USER DOMAIN [FORMAT]
+#
+# The function of obtaining domain dkim files.
+
+
+/usr/local/vesta/bin/v-list-mail-domain-dkim-dns
+
+# info: list mail domain dkim dns records
+# options: USER DOMAIN [FORMAT]
+#
+# The function of obtaining domain dkim dns records for proper setup.
+
+
+/usr/local/vesta/bin/v-list-mail-domains
+
+# info: list mail domains
+# options: USER [FORMAT]
+#
+# The function of obtaining the list of all user domains.
+
+
+/usr/local/vesta/bin/v-list-remote-dns-hosts
+
+# info: list remote dns host
+# options: [FORMAT]
+#
+# The function for obtaining the list of remote dns host.
+
+
+/usr/local/vesta/bin/v-list-sys-config
+
+# info: list system configuration
+# options: [FORMAT]
+#
+# The function for obtaining the list of system parameters.
+
+
+/usr/local/vesta/bin/v-list-sys-cpu-status
+
+# info: list system cpu info
+# options: [FORMAT]
+#
+# The function lists cpu information
+
+
+/usr/local/vesta/bin/v-list-sys-db-status
+
+# info: list db status
+# options: [FORMAT]
+#
+# The function lists db server status
+
+
+/usr/local/vesta/bin/v-list-sys-disk-status
+
+# info: list disk information
+# options: [FORMAT]
+#
+# The function lists disk information
+
+
+/usr/local/vesta/bin/v-list-sys-dns-status
+
+# info: list dns status
+# options: [FORMAT]
+#
+# The function lists dns server status
+
+
+/usr/local/vesta/bin/v-list-sys-info
+
+# info: list system os
+# options: [FORMAT]
+#
+# The function checks available updates for vesta packages.
+
+
+/usr/local/vesta/bin/v-list-sys-interfaces
+
+# info: list system interfaces
+# options: [FORMAT]
+#
+# The function for obtaining the list of network interfaces.
+
+
+/usr/local/vesta/bin/v-list-sys-ip
+
+# info: list system ip
+# options: IP [FORMAT]
+#
+# The function for getting the list of system ip parameters.
+
+
+/usr/local/vesta/bin/v-list-sys-ips
+
+# info: list system ips
+# options: [FORMAT]
+#
+# The function for obtaining the list of system ip adresses.
+
+
+/usr/local/vesta/bin/v-list-sys-languages
+
+# info: list system users
+# options: [FORMAT]
+#
+# The function for obtaining the list of system users without
+# detailed information.
+
+
+/usr/local/vesta/bin/v-list-sys-mail-status
+
+# info: list mail status
+# options: [FORMAT]
+#
+# The function lists mail server status
+
+
+/usr/local/vesta/bin/v-list-sys-memory-status
+
+# info: list virtual memory info
+# options: [FORMAT]
+#
+# The function lists virtual memory information
+
+
+/usr/local/vesta/bin/v-list-sys-network-status
+
+# info: list system network status
+# options: [FORMAT]
+#
+# The function lists network status
+
+
+/usr/local/vesta/bin/v-list-sys-rrd
+
+
+/usr/local/vesta/bin/v-list-sys-services
+
+# info: list system services
+# options: [FORMAT]
+#
+# The function for obtaining the list of configured system services.
+
+
+/usr/local/vesta/bin/v-list-sys-shells
+
+# info: list system shells
+# options: [FORMAT]
+#
+# The function for obtaining the list of system shells.
+
+
+/usr/local/vesta/bin/v-list-sys-users
+
+# info: list system users
+# options: [FORMAT]
+#
+# The function for obtaining the list of system users without
+# detailed information.
+
+
+/usr/local/vesta/bin/v-list-sys-vesta-autoupdate
+
+# info: list vesta autoupdate settings
+# options: [FORMAT]
+#
+# The function for obtaining autoupdate setings.
+
+
+/usr/local/vesta/bin/v-list-sys-vesta-updates
+
+# info: list system updates
+# options: [FORMAT]
+#
+# The function checks available updates for vesta packages.
+
+
+/usr/local/vesta/bin/v-list-sys-web-status
+
+# info: list web status
+# options: [FORMAT]
+#
+# The function lists web server status
+
+
+/usr/local/vesta/bin/v-list-user
+
+# info: list user parameters
+# options: USER [FORMAT]
+#
+# The function to obtain user parameters.
+
+
+/usr/local/vesta/bin/v-list-user-backup
+
+# info: list user backup
+# options: USER BACKUP [FORMAT]
+#
+# The function of obtaining the list of backup parameters. This call, just as
+# all v_list_* calls, supports 3 formats - json, shell and plain.
+
+
+/usr/local/vesta/bin/v-list-user-backup-exclusions
+
+# info: list backup exclusions
+# options: USER [FORMAT]
+#
+# The function for obtaining the backup exclusion list
+
+
+/usr/local/vesta/bin/v-list-user-backups
+
+# info: list user backups
+# options: USER [FORMAT]
+#
+# The function for obtaining the list of available user backups.
+
+
+/usr/local/vesta/bin/v-list-user-favourites
+
+# info: list user favourites
+# options: USER [FORMAT]
+#
+# The function for getting the list of favourite user objects
+
+
+/usr/local/vesta/bin/v-list-user-ips
+
+# info: list user ips
+# options: USER [FORMAT]
+#
+# The function for obtaining the list of available ip addresses.
+
+
+/usr/local/vesta/bin/v-list-user-log
+
+# info: list user log
+# options: USER [FORMAT]
+#
+# The function of obtaining the list of 100 last users commands.
+
+
+/usr/local/vesta/bin/v-list-user-notifications
+
+# info: list user notifications
+# options: USER [FORMAT]
+#
+# The function for getting the list notifications
+
+
+/usr/local/vesta/bin/v-list-user-ns
+
+
+/usr/local/vesta/bin/v-list-user-package
+
+# info: list user package
+# options: PACKAGE [FORMAT]
+#
+# The function for getting the list of system ip parameters.
+
+
+/usr/local/vesta/bin/v-list-user-packages
+
+# info: list user packages
+# options: [FORMAT]
+#
+# The function for obtaining the list of available hosting packages.
+
+
+/usr/local/vesta/bin/v-list-users
+
+# info: list users
+# options: [FORMAT]
+#
+# The function to obtain the list of all system users.
+
+
+/usr/local/vesta/bin/v-list-users-stats
+
+# info: list overall user stats
+# options: [FORMAT]
+#
+# The function for listing overall user statistics
+
+
+/usr/local/vesta/bin/v-list-user-stats
+
+# info: list user stats
+# options: [FORMAT]
+#
+# The function for listing user statistics
+
+
+/usr/local/vesta/bin/v-list-web-domain
+
+# info: list web domain parameters
+# options: USER DOMAIN [FORMAT]
+#
+# The function to obtain web domain parameters.
+
+
+/usr/local/vesta/bin/v-list-web-domain-accesslog
+
+# info: list web domain access log
+# options: USER DOMAIN [LINES] [FORMAT]
+#
+# The function of obtaining raw access web domain logs.
+
+
+/usr/local/vesta/bin/v-list-web-domain-errorlog
+
+# info: list web domain error log
+# options: USER DOMAIN [LINES] [FORMAT]
+#
+# The function of obtaining raw error web domain logs.
+
+
+/usr/local/vesta/bin/v-list-web-domains
+
+# info: list web domains
+# options: USER [FORMAT]
+#
+# The function to obtain the list of all user web domains.
+
+
+/usr/local/vesta/bin/v-list-web-domain-ssl
+
+# info: list web domain ssl certificate
+# options: USER DOMAIN [FORMAT]
+#
+# The function of obtaining domain ssl files.
+
+
+/usr/local/vesta/bin/v-list-web-stats
+
+# info: list web statistics
+# options: [FORMAT]
+#
+# The function for obtaining the list of web statistics analyzer.
+
+
+/usr/local/vesta/bin/v-list-web-templates
+
+# info: list web templates
+# options: USER [FORMAT]
+#
+# The function for obtaining the list of web templates available to a user.
+
+
+/usr/local/vesta/bin/v-list-web-templates-backend
+
+# info: listing backend templates
+# options: [FORMAT]
+#
+# The function for obtaining the list of available backend templates.
+
+
+/usr/local/vesta/bin/v-list-web-templates-proxy
+
+# info: listing proxy templates
+# options: [FORMAT]
+#
+# The function for obtaining the list of proxy templates available to a user.
+
+
+/usr/local/vesta/bin/v-move-fs-directory
+
+# info: move file
+# options: USER SRC_DIRECTORY DST_DIRECTORY
+#
+# The function moved file or directory on the file system. This function
+# can also be used to rename files just like normal mv command.
+
+
+/usr/local/vesta/bin/v-move-fs-file
+
+# info: move file
+# options: USER SRC_FILE DST_FLE
+#
+# The function moved file or directory on the file system. This function
+# can also be used to rename files just like normal mv command.
+
+
+/usr/local/vesta/bin/v-open-fs-file
+
+# info: open file
+# options: USER FILE
+#
+# The function opens/reads files on the file system
+
+
+/usr/local/vesta/bin/v-rebuild-cron-jobs
+
+# info: rebuild cron jobs
+# options: USER [RESTART]
+#
+# The function rebuilds system cron config file for specified user.
+
+
+/usr/local/vesta/bin/v-rebuild-databases
+
+# info: rebuild databases
+# options: USER
+#
+# The function for rebuilding of all databases of a single user.
+
+
+/usr/local/vesta/bin/v-rebuild-dns-domain
+
+# info: rebuild dns domain
+# options: USER DOMAIN [RESTART] [UPDATE_SERIAL]
+#
+# The function rebuilds DNS configuration files.
+
+
+/usr/local/vesta/bin/v-rebuild-dns-domains
+
+# info: rebuild dns domains
+# options: USER [RESTART] [UPDATE_SERIAL]
+#
+# The function rebuilds DNS configuration files.
+
+
+/usr/local/vesta/bin/v-rebuild-mail-domains
+
+# info: rebuild mail domains
+# options: USER
+#
+# The function rebuilds EXIM configuration files for all mail domains.
+
+
+/usr/local/vesta/bin/v-rebuild-user
+
+# info: rebuild system user
+# options: USER [RESTART]
+#
+# The function rebuilds system user account.
+
+
+/usr/local/vesta/bin/v-rebuild-web-domains
+
+# info: rebuild dns domains
+# options: USER [RESTART]
+#
+# The function rebuilds web configuration files.
+
+
+/usr/local/vesta/bin/v-restart-cron
+
+# info: restart cron service
+# options: NONE
+#
+# The function tells crond service to reread its configuration files.
+
+
+/usr/local/vesta/bin/v-restart-dns
+
+# info: restart dns service
+# options: NONE
+#
+# The function tells BIND service to reload dns zone files.
+
+
+/usr/local/vesta/bin/v-restart-ftp
+
+# info: restart ftp service
+# options: NONE
+#
+# The function tells ftp server to reread its configuration.
+
+
+/usr/local/vesta/bin/v-restart-mail
+
+# info: restart mail service
+# options: NONE
+#
+# The function tells Exim service to reload configuration files.
+
+
+/usr/local/vesta/bin/v-restart-proxy
+
+# info: restart proxy server
+# options: NONE
+#
+# The function reloads proxy server configuration.
+
+
+/usr/local/vesta/bin/v-restart-service
+
+# info: restart service
+# options: service
+#
+# The function restarts system service.
+
+
+/usr/local/vesta/bin/v-restart-system
+
+# info: restart operating system
+# options: restart
+#
+# The function restarts operating system.
+
+
+/usr/local/vesta/bin/v-restart-web
+
+# info: restart web server
+# options: NONE
+#
+# The function reloads web server configuration.
+
+
+/usr/local/vesta/bin/v-restart-web-backend
+
+# info: restart backend server
+# options: NONE
+#
+# The function reloads backend server configuration.
+
+
+/usr/local/vesta/bin/v-restore-user
+
+# info: restore user
+# options: USER BACKUP [WEB] [DNS] [MAIL] [DB] [CRON] [UDIR] [NOTIFY]
+#
+# The function for resotring user from backup.
+
+
+/usr/local/vesta/bin/v-schedule-user-backup
+
+# info: schedule user backup creation
+# options: USER
+#
+# The function for scheduling user backup creation.
+
+
+/usr/local/vesta/bin/v-schedule-user-restore
+
+# info: schedule user backup restoration
+# options: USER BACKUP [WEB] [DNS] [MAIL] [DB] [CRON] [UDIR]
+#
+# The function for scheduling user backup restoration.
+
+
+/usr/local/vesta/bin/v-search-domain-owner
+
+# info: search domain owner
+# options: DOMAIN [TYPE]
+#
+# The function that allows to find user objects.
+
+
+/usr/local/vesta/bin/v-search-fs-object
+
+# info: search file or directory
+# options: USER OBJECT [PATH]
+#
+# The function search files and directories on the file system
+
+
+/usr/local/vesta/bin/v-search-object
+
+# info: search objects
+# options: OBJECT [FORMAT]
+#
+# The function that allows to find system objects.
+
+
+/usr/local/vesta/bin/v-search-user-object
+
+# info: search objects
+# options: USER OBJECT [FORMAT]
+#
+# The function that allows to find user objects.
+
+
+/usr/local/vesta/bin/v-sign-letsencrypt-csr
+
+# info: sing letsencrypt csr
+# options: USER DOMAIN CSR_DIR [FORMAT]
+#
+# The function signs certificate request using LetsEncript API
+
+
+/usr/local/vesta/bin/v-start-service
+
+# info: start service
+# options: service
+#
+# The function starts system service.
+
+
+/usr/local/vesta/bin/v-stop-firewall
+
+# info: stop system firewall
+# options: NONE
+#
+# The function stops  iptables
+
+
+/usr/local/vesta/bin/v-stop-service
+
+# info: stop service
+# options: service
+#
+# The function stops system service.
+
+
+/usr/local/vesta/bin/v-suspend-cron-job
+
+# info: suspend cron job
+# options: USER JOB [RESTART]
+#
+# The function suspends a certain job of the cron scheduler.
+
+
+/usr/local/vesta/bin/v-suspend-cron-jobs
+
+# info: Suspending sys cron jobs
+# options: USER [RESTART]
+#
+# The function suspends all user cron jobs.
+
+
+/usr/local/vesta/bin/v-suspend-database
+
+# info: suspend database
+# options: USER DATABASE
+#
+# The function for suspending a certain user database.
+
+
+/usr/local/vesta/bin/v-suspend-database-host
+
+# info: suspend database server
+# options: TYPE HOST
+#
+# The function for suspending a database server.
+
+
+/usr/local/vesta/bin/v-suspend-databases
+
+# info: suspend databases
+# options: USER
+#
+# The function for suspending of all databases of a single user.
+
+
+/usr/local/vesta/bin/v-suspend-dns-domain
+
+# info: suspend dns domain
+# options: USER DOMAIN [RESTART]
+#
+# The function suspends a certain user's domain.
+
+
+/usr/local/vesta/bin/v-suspend-dns-domains
+
+# info: suspend dns domains
+# options: USER [RESTART]
+#
+# The function suspends all user's DNS domains.
+
+
+/usr/local/vesta/bin/v-suspend-dns-record
+
+# info: suspend dns domain record
+# options: USER DOMAIN ID [RESTART]
+#
+# The function suspends a certain domain record.
+
+
+/usr/local/vesta/bin/v-suspend-domain
+
+# info: suspend web/dns/mail domain
+# options: USER DOMAIN
+#
+# The function suspends web/dns/mail domain.
+
+
+/usr/local/vesta/bin/v-suspend-firewall-rule
+
+# info: suspend firewall rule
+# options: RULE
+#
+# The function suspends a certain firewall rule.
+
+
+/usr/local/vesta/bin/v-suspend-mail-account
+
+# info: suspend mail account
+# options: USER DOMAIN ACCOUNT
+#
+# The function suspends mail account.
+
+
+/usr/local/vesta/bin/v-suspend-mail-accounts
+
+# info: suspend all mail domain accounts
+# options: USER DOMAIN
+#
+# The function suspends all mail domain accounts.
+
+
+/usr/local/vesta/bin/v-suspend-mail-domain
+
+# info: suspend mail domain
+# options: USER DOMAIN
+#
+# The function suspends mail domain. 
+
+
+/usr/local/vesta/bin/v-suspend-mail-domains
+
+# info: suspend mail domains
+# options: USER
+#
+# The function suspends all user's MAIL domains.
+
+
+/usr/local/vesta/bin/v-suspend-remote-dns-host
+
+# info: suspend remote dns server
+# options: HOST
+#
+# The function for suspending remote dns server.
+
+
+/usr/local/vesta/bin/v-suspend-user
+
+# info: suspend user
+# options: USER [RESTART]
+#
+# The function suspends a certain user and all his objects.
+
+
+/usr/local/vesta/bin/v-suspend-web-domain
+
+# info: suspend web domain
+# options: USER DOMAIN
+#
+# The function for suspending the site's operation. After blocking it all
+# visitors will be redirected to a web page explaining the reason of suspend.
+# By blocking the site the content of all its directories remains untouched.
+
+
+/usr/local/vesta/bin/v-suspend-web-domains
+
+# info: suspend web domains
+# options: USER [RESTART]
+#
+# The function of suspending all user's sites. 
+
+
+/usr/local/vesta/bin/v-sync-dns-cluster
+
+# info: synchronize dns domains
+# options: HOST
+# The function synchronize all dns domains.
+
+
+/usr/local/vesta/bin/v-unsuspend-cron-job
+
+# info: unsuspend cron job
+# options: USER JOB [RESTART]
+#
+# The function unsuspend certain cron job.
+
+
+/usr/local/vesta/bin/v-unsuspend-cron-jobs
+
+# info: unsuspend sys cron
+# options: USER [RESTART]
+#
+# The function unsuspends all suspended cron jobs.
+
+
+/usr/local/vesta/bin/v-unsuspend-database
+
+# info: unsuspend database
+# options: USER DATABASE
+#
+# The function for unsuspending database.
+
+
+/usr/local/vesta/bin/v-unsuspend-database-host
+
+# info: unsuspend database server
+# options: TYPE HOST
+#
+# The function for unsuspending a database server.
+
+
+/usr/local/vesta/bin/v-unsuspend-databases
+
+# info: unsuspend databases
+# options: USER
+#
+# The function for unsuspending all user's databases.
+
+
+/usr/local/vesta/bin/v-unsuspend-dns-domain
+
+# info: unsuspend dns domain
+# options: USER DOMAIN
+#
+# The function unsuspends a certain user's domain.
+
+
+/usr/local/vesta/bin/v-unsuspend-dns-domains
+
+# info: unsuspend dns domains
+# options: USER [RESTART]
+#
+# The function unsuspends all user's DNS domains.
+
+
+/usr/local/vesta/bin/v-unsuspend-dns-record
+
+# info: unsuspend dns domain record
+# options: USER DOMAIN ID [RESTART]
+#
+# The function unsuspends a certain domain record.
+
+
+/usr/local/vesta/bin/v-unsuspend-domain
+
+# info: unsuspend web/dns/mail domain
+# options: USER DOMAIN
+#
+# The function unsuspends web/dns/mail domain.
+
+
+/usr/local/vesta/bin/v-unsuspend-firewall-rule
+
+# info: unsuspend firewall rule
+# options: RULE
+#
+# The function unsuspends a certain firewall rule.
+
+
+/usr/local/vesta/bin/v-unsuspend-mail-account
+
+# info: unsuspend mail account
+# options: USER DOMAIN ACCOUNT
+#
+# The function unsuspends mail account.
+
+
+/usr/local/vesta/bin/v-unsuspend-mail-accounts
+
+# info: unsuspend all mail domain accounts
+# options: USER DOMAIN
+#
+# The function unsuspends all mail domain accounts.
+
+
+/usr/local/vesta/bin/v-unsuspend-mail-domain
+
+# info: unsuspend mail domain
+# options: USER DOMAIN
+#
+# The function unsuspends mail domain. 
+
+
+/usr/local/vesta/bin/v-unsuspend-mail-domains
+
+# info: unsuspend mail domains
+# options: USER
+#
+# The function unsuspends all user's MAIL domains.
+
+
+/usr/local/vesta/bin/v-unsuspend-remote-dns-host
+
+# info: unsuspend remote dns server
+# options: HOST
+#
+# The function for unsuspending remote dns server.
+
+
+/usr/local/vesta/bin/v-unsuspend-user
+
+# info: unsuspend user
+# options: USER [RESTART]
+#
+# The function unsuspends user and all his objects.
+
+
+/usr/local/vesta/bin/v-unsuspend-web-domain
+
+# info: unsuspend web domain
+# options: USER DOMAIN
+#
+# The function of unsuspending the domain.
+
+
+/usr/local/vesta/bin/v-unsuspend-web-domains
+
+# info: unsuspend web domains
+# options: USER [RESTART]
+#
+# The function of unsuspending all user's sites.
+
+
+/usr/local/vesta/bin/v-update-database-disk
+
+# info: update database disk usage
+# options: USER DATABASE
+#
+# The function recalculates disk usage for specific database.
+
+
+/usr/local/vesta/bin/v-update-databases-disk
+
+# info: update databases disk usage
+# options: USER
+#
+# The function recalculates disk usage for all user databases.
+
+
+/usr/local/vesta/bin/v-update-dns-templates
+
+# info: update dns templates
+# options: [RESTART]
+#
+# The function for obtaining updated pack of dns templates.
+
+
+/usr/local/vesta/bin/v-update-firewall
+
+# info: update system firewall rules
+# options: NONE
+#
+# The function updates iptables rules
+
+
+/usr/local/vesta/bin/v-update-letsencrypt-ssl
+
+# info: update letsencrypt ssl certificates
+# options: NONE
+#
+# The function for renew letsencrypt expired ssl certificate for all users
+
+
+/usr/local/vesta/bin/v-update-mail-domain-disk
+
+# info: update mail domain disk usage
+# options: USER DOMAIN
+#
+# The function updates domain disk usage.
+
+
+/usr/local/vesta/bin/v-update-mail-domains-disk
+
+# info: calculate disk usage for all mail domains
+# options: USER
+#
+# The function calculates disk usage for all mail domains.
+
+
+/usr/local/vesta/bin/v-update-sys-ip
+
+# info: update system ip
+# options: [USER] [IP_STATUS]
+#
+# The function scans configured ip in the system and register them with vesta
+# internal database. This call is intended for use on vps servers, where ip is
+# set by hypervizor.
+
+
+/usr/local/vesta/bin/v-update-sys-ip-counters
+
+
+/usr/local/vesta/bin/v-update-sys-queue
+
+# info: update system queue
+# options: PIPE
+#
+# This function is responsible queue processing. Restarts of services,
+# scheduled backups, web log parsing and other heavy resource consuming
+# operations are handled by this script. It helps to optimize system behaviour.
+# In a nutshell Apache will be restarted only once even if 10 domains are
+# added or deleted.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd
+
+# info: update system rrd charts
+# options: NONE
+#
+# The script is wrapper for all rrd functions. It updates all 
+# v-update-sys-rrd_* at once.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-apache2
+
+# info: update apache2 rrd
+# options: PERIOD
+#
+# The function is for updating apache rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-ftp
+
+# info: update ftp rrd
+# options: PERIOD
+#
+# The function is for updating ftpd rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-httpd
+
+# info: update httpd rrd
+# options: PERIOD
+#
+# The function is for updating apache rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-la
+
+# info: update load average rrd
+# options: PERIOD
+#
+# The function is for updating load average rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-mail
+
+# info: update mail rrd
+# options: PERIOD
+#
+# The function is for updating mail rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-mem
+
+# info: update memory rrd
+# options: PERIOD
+#
+# The function is for updating memory rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-mysql
+
+# info: update MySQL rrd
+# options: PERIOD
+#
+# The function is for updating mysql rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-net
+
+# info: update network rrd
+# options: PERIOD
+#
+# The function is for updating network usage rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-nginx
+
+# info: update nginx rrd
+# options: PERIOD
+#
+# The function is for updating nginx rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-pgsql
+
+# info: update PostgreSQL rrd
+# options: PERIOD
+#
+# The function is for updating postgresql rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-rrd-ssh
+
+# info: update ssh rrd
+# options: PERIOD
+#
+# The function is for updating ssh rrd database and graphic.
+
+
+/usr/local/vesta/bin/v-update-sys-vesta
+
+# info: update vesta package/configs
+# options: PACKAGE [VERSION]
+#
+# The function runs as rpm update trigger. It pulls shell script from vesta
+# server and runs it.
+
+
+/usr/local/vesta/bin/v-update-sys-vesta-all
+
+# info: update all vesta packages
+# options: USER [RESTART]
+#
+# The function of updating all vesta packages
+
+
+/usr/local/vesta/bin/v-update-user-backup-exclusions
+
+# info: update backup exclusion list
+# options: USER FILE
+#
+# The function for updating backup exclusion list
+
+
+/usr/local/vesta/bin/v-update-user-counters
+
+
+/usr/local/vesta/bin/v-update-user-disk
+
+# info: update user disk usage
+# options: USER
+#
+# The functions recalculates disk usage and updates database.
+
+
+/usr/local/vesta/bin/v-update-user-package
+
+# info: update user package
+# options: PACKAGE
+#
+# The function propagates package to connected users.
+
+
+/usr/local/vesta/bin/v-update-user-quota
+
+# info: update user disk quota
+# options: USER
+#
+# The functions upates disk quota for specific user
+
+
+/usr/local/vesta/bin/v-update-user-stats
+
+
+/usr/local/vesta/bin/v-update-web-domain-disk
+
+# info: update disk usage for domain
+# options: USER DOMAIN
+#
+# The function recalculates disk usage for specific webdomain.
+
+
+/usr/local/vesta/bin/v-update-web-domains-disk
+
+# info: update domains disk usage 
+# options: USER
+#
+# The function recalculates disk usage for all user webdomains.
+
+
+/usr/local/vesta/bin/v-update-web-domains-stat
+
+# info: update domains statistics
+# options: USER
+#
+# The function runs log analyzer usage for all user webdomains.
+
+
+/usr/local/vesta/bin/v-update-web-domain-stat
+
+# info: update domain statistics
+# options: USER DOMAIN
+#
+# The function runs log analyzer for specific webdomain.
+
+
+/usr/local/vesta/bin/v-update-web-domains-traff
+
+# info: update domains bandwidth usage
+# options: USER
+#
+# The function recalculates bandwidth usage for all user webdomains.
+
+
+/usr/local/vesta/bin/v-update-web-domain-traff
+
+# info: update domain bandwidth usage
+# options: USER DOMAIN
+#
+# The function recalculates bandwidth usage for specific domain.
+
+
+/usr/local/vesta/bin/v-update-web-templates
+
+# info: update web templates
+# options: [RESTART]
+#
+# The function for obtaining updated pack of web templates.
