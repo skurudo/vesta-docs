@@ -2,7 +2,7 @@
 Vesta DOCS - documentation project for support Vesta Control Panel
 
 ##What we do?
-We summarize docs material and make documentation of VestaCP command for all
+We summarize docs material and make documentation of VestaCP commands for all
 
 ##How we do this?
 * docs.sh - parser, get information from v-command files;
