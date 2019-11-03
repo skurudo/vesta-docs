@@ -31,6 +31,14 @@
 # is  mailed to user's email if parameter REPORTS is set to 'yes'.
 
 
+/usr/local/vesta/bin/v-add-cron-letsencrypt-job
+
+# info: add letsencrypt cronjob
+# options: NONE
+#
+# The script for enabling letsencrypt cronjob
+
+
 /usr/local/vesta/bin/v-add-cron-reports
 
 # info: add cron reports
@@ -171,23 +179,18 @@
 
 /usr/local/vesta/bin/v-add-letsencrypt-domain
 
-# info: adding letsencrypt ssl cetificate for domain
-# options: USER DOMAIN [ALIASES] [RESTART]
+# info: check letsencrypt domain
+# options: USER DOMAIN [ALIASES]
 #
-# The function turns on SSL support for a domain. Parameter ssl_dir is a path
-# to directory where 2 or 3 ssl files can be found. Certificate file 
-# domain.tld.crt and its key domain.tld.key  are mandatory. Certificate
-# authority domain.tld.ca file is optional. If home directory  parameter
-# (ssl_home) is not set, https domain uses public_shtml as separate
-# documentroot directory.
+# The function check and validates domain with Let's Encript
 
 
 /usr/local/vesta/bin/v-add-letsencrypt-user
 
 # info: register letsencrypt user account
-# options: USER [EMAIL]
+# options: USER
 #
-# The function creates and register LetsEncript account key
+# The function creates and register LetsEncript account 
 
 
 /usr/local/vesta/bin/v-add-mail-account
@@ -315,6 +318,14 @@
 # is very handy when customer wants to test domain before dns migration.
 
 
+/usr/local/vesta/bin/v-add-sys-mail-ssl
+
+# info: copy mail ssl certificate
+# options: USER DOMAIN [RESTART]
+#
+# The function copies user domain SSL to mail SSL directory
+
+
 /usr/local/vesta/bin/v-add-sys-quota
 
 # info: add system quota
@@ -329,6 +340,14 @@
 # options: NONE
 #
 # The script enables sftp jailed environment
+
+
+/usr/local/vesta/bin/v-add-sys-vesta-ssl
+
+# info: add vesta ssl certificate
+# options: USER DOMAIN [RESTART]
+#
+# The function copies user domain SSL to vesta SSL directory
 
 
 /usr/local/vesta/bin/v-add-user
@@ -371,10 +390,18 @@
 # The script enables sftp jailed environment
 
 
+/usr/local/vesta/bin/v-add-vesta-softaculous
+
+# info: add vesta softaculous
+# options: [TYPE]
+#
+# The script enables softaculous plugin
+
+
 /usr/local/vesta/bin/v-add-web-domain
 
 # info: add web domain
-# options: USER DOMAIN [IP] [ALIASES] [PROXY_EXTENTIONS] [RESTART]
+# options: USER DOMAIN [IP] [ALIASES] [PROXY_EXTENSIONS] [RESTART]
 #
 # The function adds virtual host to a server. In cases when ip is
 # undefined in the script, "default" template will be used. The alias of
@@ -454,7 +481,7 @@
 /usr/local/vesta/bin/v-add-web-domain-stats-user
 
 # info: add password protection to web domain statistics
-# options: USER DOMAIN STATS_USER STATS_PASSWORD
+# options: USER DOMAIN STATS_USER STATS_PASSWORD [RESTART]
 #
 # The call is used for securing the web statistics page.
 
@@ -707,12 +734,28 @@
 # The function for changing system language.
 
 
+/usr/local/vesta/bin/v-change-sys-service-config
+
+# info: change service config
+# options: CONFIG SERVICE [RESTART]
+#
+# The function for changing service confguration.
+
+
 /usr/local/vesta/bin/v-change-sys-timezone
 
 # info: change system timezone
 # options: TIMEZONE
 #
 # The function for changing system timezone.
+
+
+/usr/local/vesta/bin/v-change-sys-vesta-ssl
+
+# info: change vesta ssl certificate
+# options: SSL_DIR [RESTART]
+#
+# The function changes vesta SSL certificate and the key.
 
 
 /usr/local/vesta/bin/v-change-user-contact
@@ -819,6 +862,14 @@
 # The call is used for changing domain ip
 
 
+/usr/local/vesta/bin/v-change-web-domain-name
+
+# info: change web domain name
+# options: USER DOMAIN NEW_DOMAIN [RESTART]
+#
+# The call is used for changing the domain name.
+
+
 /usr/local/vesta/bin/v-change-web-domain-proxy-tpl
 
 # info: change web domain proxy template
@@ -857,6 +908,14 @@
 # of webdomain directories remains untouched.
 
 
+/usr/local/vesta/bin/v-check-api-key
+
+# info: check api key
+# options: KEY
+#
+# The function checks a key file in /usr/local/vesta/data/keys/
+
+
 /usr/local/vesta/bin/v-check-fs-permission
 
 # info: open file
@@ -865,12 +924,12 @@
 # The function opens/reads files on the file system
 
 
-/usr/local/vesta/bin/v-check-letsencrypt-domain
+/usr/local/vesta/bin/v-check-user-hash
 
-# info: check letsencrypt domain
-# options: USER DOMAIN
+# info: check user hash
+# options: USER HASH [IP]
 #
-# The function check and validates domain with LetsEncript
+# The function verifies user hash
 
 
 /usr/local/vesta/bin/v-check-user-password
@@ -910,7 +969,7 @@
 # info: deactivate vesta license
 # options: MODULE LICENSE
 #
-# The function activates and register vesta license
+# The function deactivates vesta license
 
 
 /usr/local/vesta/bin/v-delete-backup-host
@@ -1069,6 +1128,14 @@
 # The function deletes file on the file system
 
 
+/usr/local/vesta/bin/v-delete-letsencrypt-domain
+
+# info: deleting letsencrypt ssl cetificate for domain
+# options: USER DOMAIN [RESTART]
+#
+# The function turns off letsencrypt SSL support for a domain.
+
+
 /usr/local/vesta/bin/v-delete-mail-account
 
 # info: delete mail account
@@ -1206,6 +1273,14 @@
 # on interface and do not allow to delete ip which is used by a web domain.
 
 
+/usr/local/vesta/bin/v-delete-sys-mail-ssl
+
+# info: delete sys vesta user ssl certificate
+# options: NONE
+#
+# The script disables user domain ssl synchronization
+
+
 /usr/local/vesta/bin/v-delete-sys-quota
 
 # info: delete system quota
@@ -1219,7 +1294,15 @@
 # info: delete system sftp jail
 # options: NONE
 #
-# The script enables sftp jailed environment
+# The script disables sftp jailed environment
+
+
+/usr/local/vesta/bin/v-delete-sys-vesta-ssl
+
+# info: delete sys vesta user ssl certificate
+# options: NONE
+#
+# The script disables user domain ssl synchronization
 
 
 /usr/local/vesta/bin/v-delete-user
@@ -1234,7 +1317,7 @@
 /usr/local/vesta/bin/v-delete-user-backup
 
 # info: delete user backup
-# options: USER NACKUP
+# options: USER BACKUP
 #
 # The function deletes user backup.
 
@@ -1285,7 +1368,15 @@
 # info: delete user sftp jail
 # options: USER
 #
-# The script enables sftp jailed environment
+# The script disables sftp jailed environment for USER
+
+
+/usr/local/vesta/bin/v-delete-vesta-softaculous
+
+# info: delete vesta softaculous
+# options: NONE
+#
+# The script disables softaculous plugin
 
 
 /usr/local/vesta/bin/v-delete-web-domain
@@ -1368,7 +1459,7 @@
 /usr/local/vesta/bin/v-delete-web-domain-stats-user
 
 # info: disable webdomain stats  authentication support
-# options: USER DOMAIN
+# options: USER DOMAIN [RESTART]
 #
 # The function removes authentication of statistics system. If the script is
 # called without naming a certain user, all users will be removed. After
@@ -1456,6 +1547,14 @@
 # options: [FORMAT]
 #
 # The function checks system timezone settings
+
+
+/usr/local/vesta/bin/v-get-user-salt
+
+# info: get user salt
+# options: USER [IP] [FORMAT]
+#
+# The function provides users salt
 
 
 /usr/local/vesta/bin/v-get-user-value
@@ -1708,6 +1807,14 @@
 # The function for obtaining the list of remote dns host.
 
 
+/usr/local/vesta/bin/v-list-sys-clamd-config
+
+# info: list clamd config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of clamd config parameters.
+
+
 /usr/local/vesta/bin/v-list-sys-config
 
 # info: list system configuration
@@ -1746,6 +1853,14 @@
 # options: [FORMAT]
 #
 # The function lists dns server status
+
+
+/usr/local/vesta/bin/v-list-sys-dovecot-config
+
+# info: list dovecot config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of dovecot config parameters.
 
 
 /usr/local/vesta/bin/v-list-sys-info
@@ -1789,6 +1904,14 @@
 # detailed information.
 
 
+/usr/local/vesta/bin/v-list-sys-mail-ssl
+
+# info: list mail ssl certificate
+# options: [FORMAT]
+#
+# The function of obtaining mail ssl files.
+
+
 /usr/local/vesta/bin/v-list-sys-mail-status
 
 # info: list mail status
@@ -1805,12 +1928,52 @@
 # The function lists virtual memory information
 
 
+/usr/local/vesta/bin/v-list-sys-mysql-config
+
+# info: list mysql config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of mysql config parameters.
+
+
 /usr/local/vesta/bin/v-list-sys-network-status
 
 # info: list system network status
 # options: [FORMAT]
 #
 # The function lists network status
+
+
+/usr/local/vesta/bin/v-list-sys-nginx-config
+
+# info: list nginx config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of nginx config parameters.
+
+
+/usr/local/vesta/bin/v-list-sys-pgsql-config
+
+# info: list postgresql config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of postgresql config parameters.
+
+
+/usr/local/vesta/bin/v-list-sys-php-config
+
+# info: list php config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of php config parameters.
+
+
+/usr/local/vesta/bin/v-list-sys-proftpd-config
+
+# info: list proftpd config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of proftpd config parameters.
 
 
 /usr/local/vesta/bin/v-list-sys-rrd
@@ -1832,6 +1995,14 @@
 # The function for obtaining the list of system shells.
 
 
+/usr/local/vesta/bin/v-list-sys-spamd-config
+
+# info: list spamassassin config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of spamassassin config parameters.
+
+
 /usr/local/vesta/bin/v-list-sys-users
 
 # info: list system users
@@ -1849,12 +2020,28 @@
 # The function for obtaining autoupdate setings.
 
 
+/usr/local/vesta/bin/v-list-sys-vesta-ssl
+
+# info: list vesta ssl certificate
+# options: [FORMAT]
+#
+# The function of obtaining vesta ssl files.
+
+
 /usr/local/vesta/bin/v-list-sys-vesta-updates
 
 # info: list system updates
 # options: [FORMAT]
 #
 # The function checks available updates for vesta packages.
+
+
+/usr/local/vesta/bin/v-list-sys-vsftpd-config
+
+# info: list vsftpd config parameters
+# options: [FORMAT]
+#
+# The function for obtaining the list of vsftpd config parameters.
 
 
 /usr/local/vesta/bin/v-list-sys-web-status
@@ -2063,6 +2250,14 @@
 # can also be used to rename files just like normal mv command.
 
 
+/usr/local/vesta/bin/v-open-fs-config
+
+# info: open config
+# options: CONFIG
+#
+# The function opens/reads config files on the file system
+
+
 /usr/local/vesta/bin/v-open-fs-file
 
 # info: open file
@@ -2121,7 +2316,7 @@
 
 /usr/local/vesta/bin/v-rebuild-web-domains
 
-# info: rebuild dns domains
+# info: rebuild web domains
 # options: USER [RESTART]
 #
 # The function rebuilds web configuration files.
@@ -2207,6 +2402,14 @@
 # The function for resotring user from backup.
 
 
+/usr/local/vesta/bin/v-schedule-letsencrypt-domain
+
+# info: adding cronjob for letsencrypt cetificate installation
+# options: USER DOMAIN [ALIASES]
+#
+# The function adds cronjob for letsencrypt ssl certificate installation
+
+
 /usr/local/vesta/bin/v-schedule-user-backup
 
 # info: schedule user backup creation
@@ -2221,6 +2424,14 @@
 # options: USER BACKUP [WEB] [DNS] [MAIL] [DB] [CRON] [UDIR]
 #
 # The function for scheduling user backup restoration.
+
+
+/usr/local/vesta/bin/v-schedule-vesta-softaculous
+
+# info: adding cronjob for vesta-softaculous installation
+# options: NONE
+#
+# The function adds cronjob for letsencrypt ssl certificate installation
 
 
 /usr/local/vesta/bin/v-search-domain-owner
@@ -2247,20 +2458,20 @@
 # The function that allows to find system objects.
 
 
+/usr/local/vesta/bin/v-search-ssl-certificates
+
+# info: search ssl certificates
+# options: [FORMAT]
+#
+# The function to obtain the list of available ssl certificates.
+
+
 /usr/local/vesta/bin/v-search-user-object
 
 # info: search objects
 # options: USER OBJECT [FORMAT]
 #
 # The function that allows to find user objects.
-
-
-/usr/local/vesta/bin/v-sign-letsencrypt-csr
-
-# info: sing letsencrypt csr
-# options: USER DOMAIN CSR_DIR [FORMAT]
-#
-# The function signs certificate request using LetsEncript API
 
 
 /usr/local/vesta/bin/v-start-service
@@ -2616,6 +2827,9 @@
 # The function updates iptables rules
 
 
+/usr/local/vesta/bin/v-update-host-certificate
+
+
 /usr/local/vesta/bin/v-update-letsencrypt-ssl
 
 # info: update letsencrypt ssl certificates
@@ -2643,7 +2857,7 @@
 /usr/local/vesta/bin/v-update-sys-ip
 
 # info: update system ip
-# options: [USER] [IP_STATUS]
+# options: [NONE]
 #
 # The function scans configured ip in the system and register them with vesta
 # internal database. This call is intended for use on vps servers, where ip is
@@ -2833,6 +3047,17 @@
 # The function recalculates disk usage for all user webdomains.
 
 
+/usr/local/vesta/bin/v-update-web-domain-ssl
+
+# info: updating ssl certificate for domain
+# options: USER DOMAIN SSL_DIR [RESTART]
+#
+# The function updates the SSL certificate for a domain. Parameter ssl_dir is a path
+# to directory where 2 or 3 ssl files can be found. Certificate file 
+# domain.tld.crt and its key domain.tld.key  are mandatory. Certificate
+# authority domain.tld.ca file is optional. 
+
+
 /usr/local/vesta/bin/v-update-web-domains-stat
 
 # info: update domains statistics
@@ -2871,3 +3096,5 @@
 # options: [RESTART]
 #
 # The function for obtaining updated pack of web templates.
+
+
